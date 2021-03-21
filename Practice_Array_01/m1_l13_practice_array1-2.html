@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+        Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</title>
+</head>
+<body>
+
+<input type="text" id="nums">
+<button type="button" id="add" onclick="addNumber()">Add</button>
+<div id="result"></div>
+<script>
+    function addNumber() {
+        let str = document.getElementById('nums').value;
+        let strArr = str.split(',', 10);
+        console.log(strArr);
+        let numbers = [];
+        let result = '';
+        let count;
+        for (let i = 0; i < strArr.length; i++) {
+            let num = parseInt(strArr[i]);
+            numbers.push(num);
+        }
+        let max = numbers[0];
+        for (let i = 0; i < numbers.length; i++ ) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+                result = max;
+                count = i;
+            }
+        }
+        document.getElementById('result').innerHTML = `Số lớn nhất là ${result} tại vị trí ${count}`;
+
+    }
+</script>
+</body>
+</html>

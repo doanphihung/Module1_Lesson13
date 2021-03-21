@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+<p id="caroGame"></p>
+<button type="button" id="change" onclick="changeValue()">Change value</button>
+<script>
+    let b = document.getElementById('caroGame');
+    let board = [];
+    let data = '';
+    // Hiển thị bàn cờ
+    for (let i = 0 ; i < 5 ; i++) {
+        board[i] = ['.','.','.','.','.']    // mảng đa chiều, tạo 5 dòng là 5 phần tử board[i];
+    }
+    console.log(board);
+    // Hien thi ra
+    for (let i = 0 ; i < 5; i++) {
+        data += '<br>';
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+    b.innerHTML = data;
+
+
+
+    // // Xử lý sự kiên ấn nút change value
+    // function changeValue() {
+    //     let positonX = prompt('X: ');
+    //     let positonY = prompt('Y: ');
+    //     data = '';
+    //     board[positonX][positonY] = '.';
+    //     console.log(board);
+    //     for (let i = 0; i < 5; i++) {
+    //         data += "<br/>";
+    //         for (let j = 0; j < 5; j++) {
+    //             data += board[i][j] + "&nbsp;&nbsp;&nbsp";
+    //         }
+    //     }
+    //     b.innerHTML = '<hr>' + data;
+    // }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<label for="dictionary">Từ cần dịch: </label>
+<input type="text" id="dictionary">
+<button id="check">Dịch</button>
+<p id="result"></p>
+
+
+<script>
+    // let englishes = ['apple', 'blue', 'pen', 'house'];
+    // let vietnames = ['quatao', 'mauxanh', 'but', 'ngoinha'];
+    document.getElementById('check').addEventListener('click', translate);
+    function translate() {
+        let englishes = ['apple', 'blue', 'pen', 'house'];
+        let vietnames = ['quatao', 'mauxanh', 'but', 'ngoinha'];
+        let a = document.getElementById('dictionary').value;
+        let result = '';
+        console.log(result);
+        for (let i = 0; i < englishes.length; i++) {
+            if (a == englishes[i]) {
+                 result = vietnames[i];
+                     console.log(result);
+                     break;
+            } else {
+                result = 'Nhập từ khác';
+            }
+            // document.getElementById('result').innerHTML = result;
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</body>
+</html>

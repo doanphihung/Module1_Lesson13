@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1 - Practice1</title>
+</head>
+<body>
+Nhập số nguyên tạo mảng:
+<input type="text" id="nums">
+<button type="button" id="add" onclick="addNumber()">Add</button>
+<div id="result"></div>
+<script>
+    function addNumber() {
+        let str = document.getElementById('nums').value;
+        let strArr = str.split(',', 10);  // Chuyển chuỗi nhập vào thành mảng dựa vào ký tự phân cách ',' tối đa 10 phần tử
+        console.log(strArr);              // khi chuyển thì mỗi phần tử trong mảng là string, nên cần chuyển về số.
+        let numbers = [];
+        let result = '';
+        let count = 0;
+        for ( let i = 0; i <  strArr.length; i++) {
+            let num = parseInt(strArr[i]);
+            numbers.push(num);
+        }
+
+        for(let i of numbers) {
+            if (i >= 10) {
+                result += i + ' ';
+                count++
+            }
+        }
+        document.getElementById('result').innerHTML = `Co ${count} so lon hon 10 la: ${result}`;
+
+
+
+
+
+
+        // cách 2 chuyển string về số:
+        // number2 = strArr.map(x => parseInt(x));
+        // console.log(number2);
+    }
+
+
+
+</script>
+
+</body>
+</html>

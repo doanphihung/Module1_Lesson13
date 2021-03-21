@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển chuỗi chữ thường thành chữ Hoa</title>
+</head>
+<body>
+<script>
+    let str = prompt('Nhập: ');
+    var convert = str.toString();
+    var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    var result = [];
+
+    for (let i=0; i<convert.length; i++) {
+        if (UPPER.indexOf(convert[i]) !== -1) {
+            result.push(convert[i].toLowerCase());
+        } else if (LOWER.indexOf(convert[i]) !== -1) {
+            result.push(convert[i].toUpperCase());
+        } else result.push(convert[i]);
+    }
+    console.log(result.join(''));
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3: Viết chương trình khởi tạo mảng số nguyên.
+        Hiển hiện giá trị lớn nhất trong mảng đó.
+        In ra giá trị trung bình của các phần tử trong mảng.</title>
+</head>
+<body>
+<input type="text" id="nums">
+<button type="button" id="add" onclick="addNumber()">Add</button>
+<p id="result"></p>
+<p id="result2"></p>
+<script>
+    function addNumber() {
+        let str = document.getElementById('nums').value;
+        let strArr = str.split(',');
+        console.log(strArr);
+        let numbers = [];
+        let count = 0;
+        for (let i = 0; i < strArr.length; i++) {
+            let num = parseInt(strArr[i]);
+            numbers.push(num);
+        }
+        let max = numbers[0];
+        for(let i = 0; i < strArr.length; i++)
+            if (numbers[i] > max) {
+                max = numbers[i]
+            }
+        let result = 0;
+            for (let i = 0; i < strArr.length; i++) {
+                result += numbers[i];
+                count++
+            }
+        document.getElementById('result').innerHTML = `Max là ${max}`
+        document.getElementById('result2').innerHTML = `Trung bình là: ${result/count}`;
+    }
+
+</script>
+
+</body>
+</html>
